@@ -13,7 +13,7 @@ public interface IngredientRepository extends JpaRepository<Ingredient,Integer> 
     @Query("SELECT n from Ingredient n where n.ingredientName = :ingredientName")
     Ingredient findByExactName (@Param("ingredientName") String ingredientName);
 
-    @Query("select n from Ingredient n where n.ingredientName like '%sa%' ")
-    Ingredient findbypartofingredientName (String ingredientName);
+    @Query("select n from Ingredient n where n.ingredientName like '%ingredientName' ")
+    Ingredient findbypartofingredientName ( String ingredientName);
 
 }

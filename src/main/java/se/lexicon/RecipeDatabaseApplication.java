@@ -11,6 +11,12 @@ import se.lexicon.model.constant.Measurement;
 import se.lexicon.model.entity.Ingredient;
 import se.lexicon.model.entity.Recipe;
 import se.lexicon.model.entity.RecipeIngredient;
+import se.lexicon.model.entity.RecipeInstruction;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
 
 @SpringBootApplication
 public class RecipeDatabaseApplication implements CommandLineRunner {
@@ -30,13 +36,14 @@ public class RecipeDatabaseApplication implements CommandLineRunner {
 		ingredientRepository.save(new Ingredient(0,"red chilli"));
 		ingredientRepository.save(new Ingredient(0,"salt"));
 		ingredientRepository.save(new Ingredient(0,"green chilli"));
+		recipeRepository.save(new Recipe(0,"Omlatte"));
 
 		//System.out.println(ingredientRepository.findIngredientByIngredientName("salt"));
 		//System.out.println(ingredientRepository.findByExactName("red chilli"));
-		System.out.println(ingredientRepository.findIngredientByIngredientName("sa"));
+		//System.out.println(ingredientRepository.findbypartofingredientName("red"));
 
-		recipeIngredientRepository.save(new RecipeIngredient(null,new Ingredient(1,"red chilli"),
-				20.00, Measurement.HG,new Recipe(1,"omelette")));
+		//recipeIngredientRepository.save(new RecipeIngredient(null,new Ingredient(1,"red chilli"),
+			//	20.00, Measurement.HG,new Recipe(1,"omelette")));
 
 
 	}

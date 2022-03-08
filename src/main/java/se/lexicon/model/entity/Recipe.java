@@ -44,7 +44,49 @@ public class Recipe {
         this.recipeCategories = recipeCategories;
     }
 
-    //Convinc
+    //Convenience Methods
+
+    public void addRecipeIngredient(RecipeIngredient recipeIngredient){
+        if (recipeIngredient == null) throw new IllegalArgumentException("RecipeIngredient was null");
+        if (this.recipeIngredients == null) this.recipeIngredients = new ArrayList<>();
+
+        if (!this.recipeIngredients.contains(recipeIngredient)){
+            this.recipeIngredients.add(recipeIngredient);
+            recipeIngredient.setRecipe(this);
+        }
+    }
+
+    //Convenience Method
+    public void removeRecipeIngredient(RecipeIngredient recipeIngredient){
+        if (recipeIngredient == null) throw new IllegalArgumentException("RecipeIngredient was null");
+        if (this.recipeIngredients == null) this.recipeIngredients = new ArrayList<>();
+
+        if (this.recipeIngredients.contains(recipeIngredient)){
+            this.recipeIngredients.remove(recipeIngredient);
+            recipeIngredient.setRecipe(null);
+        }
+    }
+
+
+    public void addRecipeCategory(RecipeCategory recipeCategory)
+    {
+        if (recipeCategory == null) throw new IllegalArgumentException("RecipeCategory was null");
+        if (this.recipeCategories == null) this.recipeCategories = new HashSet<>();
+
+        this.recipeCategories.add(recipeCategory);
+        recipeCategory.getRecipes().add(this);
+
+    }
+
+    public void removeRecipeCategory(RecipeCategory recipeCategory)
+    {
+        if (recipeCategory == null) throw new IllegalArgumentException("RecipeCategory was null");
+        if (this.recipeCategories == null) this.recipeCategories = new HashSet<>();
+        this.recipeCategories.remove(recipeCategory);
+        recipeCategory.getRecipes().remove(this);
+
+    }
+
     public int getRecipeId() {
         return recipeId;
     }
