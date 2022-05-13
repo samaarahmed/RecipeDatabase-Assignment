@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello to web </title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}">
+
+</head>
+<body>
+<div class="container">
+    <div class="card card-body ">
+    <h1 > Welcome to the Home of Recipes  </h1>
+    </div>
+    <a th:href="@{/product/add}" class="btn btn-primary">Recipe</a>
+    <a class="btn btn-primary" th:href="@{/home/ingredient}">Ingredient</a>
+
+
+</div>
+<script th:src="@{/webjars/boostrap/2.9.3/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/boostrap/5.1.3/js/boostrap.min.js}"></script>
+</body>
+</html>

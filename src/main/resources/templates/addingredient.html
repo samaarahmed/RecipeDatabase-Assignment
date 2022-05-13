@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Ingredient</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}">
+
+</head>
+<body>
+<div class="container">
+    <form th:action="@{home/ingredient/addingredient/process}" th:object="${ingredient}" method="post" class="form">
+
+        <div class="mb-3">
+            <label for="ingredientId">Id:</label>
+            <input type="text" id="ingredientId"  value="" placeholder="Enter Ingredient id..." class="form-control" th:field="${ingredient.ingredientId}">
+        </div>
+        <div class="mb-3">
+            <label for="ingredientName">Name:</label>
+            <input type="text" id="ingredientName" value="" placeholder="Enter Ingredient Name..." class="form-control" th:field="${ingredient.ingredientName}">
+        </div>
+
+
+        <div class="d-grid">
+            <input type="Submit" value="Submit" class=" btn btn-success">
+        </div>
+
+    </form>
+
+
+</div>
+
+</body>
+</html>

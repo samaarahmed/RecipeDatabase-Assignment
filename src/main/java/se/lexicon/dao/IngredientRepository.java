@@ -9,6 +9,8 @@ public interface IngredientRepository extends JpaRepository<Ingredient,Integer> 
 
     //Using JPA Repository builtin methods
     Ingredient findIngredientByIngredientName (String ingredientName);
+    Ingredient deleteIngredientByIngredientId (int ingredientId);
+    Ingredient findIngredientByIngredientId (int ingredientId);
     //Using a query
     @Query("SELECT n from Ingredient n where n.ingredientName = :ingredientName")
     Ingredient findByExactName (@Param("ingredientName") String ingredientName);

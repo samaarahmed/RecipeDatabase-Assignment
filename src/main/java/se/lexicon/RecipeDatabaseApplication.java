@@ -34,9 +34,8 @@ public class RecipeDatabaseApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		ingredientRepository.save(new Ingredient(0,"red chilli"));
-		ingredientRepository.save(new Ingredient(0,"salt"));
 		ingredientRepository.save(new Ingredient(0,"green chilli"));
-		recipeRepository.save(new Recipe(0,"Omlatte"));
+		ingredientRepository.save(new Ingredient(0,"black pepper"));
 
 		//System.out.println(ingredientRepository.findIngredientByIngredientName("salt"));
 		//System.out.println(ingredientRepository.findByExactName("red chilli"));

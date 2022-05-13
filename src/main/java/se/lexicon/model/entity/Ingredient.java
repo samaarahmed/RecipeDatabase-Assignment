@@ -7,14 +7,14 @@ import java.util.Objects;
 public class Ingredient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ingredientId;
+    private Integer ingredientId;
     @Column(unique = true)
     private String ingredientName;
 
-    protected Ingredient() {
+    public Ingredient() {
     }
 
-    public Ingredient(int ingredientId, String ingredientName) {
+    public Ingredient(Integer ingredientId, String ingredientName) {
         this.ingredientId = ingredientId;
         this.ingredientName = ingredientName;
     }
@@ -23,7 +23,7 @@ public class Ingredient {
         return ingredientId;
     }
 
-    public void setIngredientId(int ingredientId) {
+    public void setIngredientId(Integer ingredientId) {
         this.ingredientId = ingredientId;
     }
 
